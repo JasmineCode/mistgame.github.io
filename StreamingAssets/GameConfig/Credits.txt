@@ -1,0 +1,1 @@
+{"heart":20,"lastDay":26,"signDay":1,"props":[],"level":[{"number":1,"star":3}]}
