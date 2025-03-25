@@ -1,1 +1,190 @@
-0
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[你的应用名称] - 技术支持</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #0066cc;
+        }
+        .contact-form {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0055aa;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .faq-question {
+            font-weight: bold;
+            color: #0066cc;
+            cursor: pointer;
+        }
+        .success-message {
+            color: green;
+            display: none;
+        }
+        footer {
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>[你的应用名称] 技术支持</h1>
+        <p>我们在这里为你提供帮助。如果你遇到任何问题或有任何疑问，请随时联系我们。</p>
+    </header>
+
+    <section class="contact-form">
+        <h2>联系我们</h2>
+        <form id="supportForm" action="[你的表单处理端点]" method="POST">
+            <div class="form-group">
+                <label for="name">姓名</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">电子邮箱</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">问题类型</label>
+                <select id="subject" name="subject" required>
+                    <option value="">请选择...</option>
+                    <option value="technical">技术问题</option>
+                    <option value="account">账户问题</option>
+                    <option value="payment">支付问题</option>
+                    <option value="feedback">功能建议</option>
+                    <option value="other">其他问题</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">详细描述</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">提交请求</button>
+            <p class="success-message">感谢你的反馈！我们已收到你的请求，会尽快回复你。</p>
+        </form>
+    </section>
+
+    <section class="faq">
+        <h2>常见问题</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">1. 如何重置密码？</div>
+            <div class="faq-answer">
+                <p>如果你忘记了密码，可以在登录页面点击"忘记密码"链接，按照提示操作重置密码。</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">2. 应用崩溃怎么办？</div>
+            <div class="faq-answer">
+                <p>请尝试以下步骤：</p>
+                <ol>
+                    <li>确保你的设备操作系统是最新版本</li>
+                    <li>关闭并重新打开应用</li>
+                    <li>如果问题仍然存在，请卸载后重新安装应用</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">3. 如何申请退款？</div>
+            <div class="faq-answer">
+                <p>请通过本页面的联系表单提交退款请求，并提供你的订单号、购买日期和退款原因。</p>
+            </div>
+        </div>
+        
+        <!-- 可以添加更多FAQ -->
+    </section>
+
+    <section class="additional-support">
+        <h2>其他支持方式</h2>
+        <p>你也可以通过以下方式联系我们：</p>
+        <ul>
+            <li>电子邮件：<a href="mailto:support@yourdomain.com">support@yourdomain.com</a></li>
+            <li>Twitter：<a href="https://twitter.com/yourhandle" target="_blank">@yourhandle</a></li>
+            <li>客服时间：周一至周五 9:00-18:00 (GMT+8)</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2023 [你的公司名称]. 保留所有权利。</p>
+    </footer>
+
+    <script>
+        // 简单的表单提交处理
+        document.getElementById('supportForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 这里应该添加实际的表单提交逻辑
+            // 例如使用Fetch API发送数据到服务器
+            
+            // 显示成功消息
+            document.querySelector('.success-message').style.display = 'block';
+            
+            // 重置表单
+            this.reset();
+            
+            // 3秒后隐藏成功消息
+            setTimeout(function() {
+                document.querySelector('.success-message').style.display = 'none';
+            }, 5000);
+        });
+        
+        // FAQ点击展开/收起
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
